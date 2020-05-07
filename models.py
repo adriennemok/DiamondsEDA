@@ -140,7 +140,7 @@ def bootstrap_linear_regression( formula, data=None, samples=100, style="linear"
     
     for i in range( samples):
         sampling_indices = [ i for i in [np.random.randint(0, n - 1) for _ in range( 0, n)]]
-        sampling = data.loc[ sampling_indices]
+        sampling = data.iloc[ sampling_indices]
         
         results = linear_regression( formula, data=sampling, style=style, params=params)
         coeffs.append( results[ "coefficients"])
