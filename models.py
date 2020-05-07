@@ -186,7 +186,7 @@ def bootstrap_logistic_regression( formula, data=None, samples=100):
     
     for i in range( samples):
         sampling_indices = [ i for i in [np.random.randint(0, n - 1) for _ in range( 0, n)]]
-        sampling = data.loc[ sampling_indices]
+        sampling = data.iloc[ sampling_indices]
         
         results = logistic_regression( formula, data=sampling)
         coeffs.append( results[ "coefficients"])
